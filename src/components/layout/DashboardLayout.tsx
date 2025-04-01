@@ -69,7 +69,10 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
           {/* Logo */}
           <div className="p-4 flex items-center justify-between border-b border-sidebar-border">
             {sidebarOpen && (
-              <Link to="/dashboard" className="text-xl font-bold gradient-text">Hivex</Link>
+              <Link to="/dashboard" className="text-xl font-bold gradient-text flex items-center">
+                <img src="/logo.png" alt="Hirex" className="h-12" />
+                <span>Hivex</span>
+              </Link>
             )}
             <button className="text-sidebar-foreground hover:text-web3-purple" onClick={toggleSidebar}>
               {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
@@ -88,8 +91,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
                   <p className="text-sm text-sidebar-foreground truncate flex items-center gap-2.5">
                     <span>{address?.substring(0, 8)}...{address?.substring(address.length - 6)}</span>
                     <button type="button" title="Copy Wallet Address" onClick={() => {
-                      navigator.clipboard.readText().then((clipText) => {
-                        clipText = address!
+                      navigator.clipboard.writeText(address!).then(() => {
                         toast.success("Wallet Address Copied!")
                       }).catch((err) => {
                         console.error("Failed to copy: ", err)
@@ -102,8 +104,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
                   <p className="text-xs text-gray-400">Hedera Account ID</p>
                   <p className="text-sm text-sidebar-foreground truncate flex items-center gap-2.5">
                     <span>{data?.account} </span> <button type="button" title="Copy Account ID" onClick={() => {
-                      navigator.clipboard.readText().then((clipText) => {
-                        clipText = data?.account
+                      navigator.clipboard.writeText(data?.account).then(() => {
                         toast.success("Hedera Account ID Copied!")
                       }).catch((err) => {
                         console.error("Failed to copy: ", err)
