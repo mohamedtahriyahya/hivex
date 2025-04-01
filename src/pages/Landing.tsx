@@ -105,13 +105,24 @@ const Landing = () => {
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
             Buy, sell, and manage tokenized stocks securely with blockchain technology and AI-powered insights
           </p>
-          <Button
-            onClick={handleGetStarted}
-            className="px-8 py-6 text-lg bg-web3-purple hover:bg-web3-dark-purple text-white rounded-xl animate-pulse-glow"
-          >
-            Get Started
-            <ArrowRight className="ml-2" />
-          </Button>
+          <div className='grid place-items-center'>
+            {
+              address ?
+                <ul className="flex items-center gap-2.5">
+                  <li>
+                    <ConnectButton showBalance={false} />
+                  </li>
+                  <li>
+                    <Button onClick={handleGetStarted} className="bg-web3-purple hover:bg-web3-dark-purple text-white">
+                      Go to Dashboard
+                    </Button>
+                  </li>
+                </ul> :
+                <ul className="flex items-center gap-2.5">
+                  <li><ConnectButton label='Connect Wallet & Trade Now' /></li>
+                </ul>
+            }
+          </div>
         </div>
       </section>
 
@@ -170,13 +181,32 @@ const Landing = () => {
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Join thousands of investors who are already trading Kenyan stocks on the blockchain
           </p>
-          <Button
-            onClick={handleGetStarted}
+
+          <div className="w-full grid place-items-center">
+            {
+              address ?
+                <ul className="flex items-center gap-2.5">
+                  <li>
+                    <ConnectButton showBalance={false} />
+                  </li>
+                  <li>
+                    <Button onClick={handleGetStarted} className="bg-web3-purple hover:bg-web3-dark-purple text-white">
+                      Go to Dashboard
+                    </Button>
+                  </li>
+                </ul> :
+                <ul className="flex items-center gap-2.5">
+                  <li><ConnectButton label='Connect Wallet & Trade Now' /></li>
+                </ul>
+            }
+          </div>
+
+          {/* <Button
             className="px-8 py-6 text-lg bg-web3-purple hover:bg-web3-dark-purple text-white rounded-xl"
           >
             Connect Wallet & Trade Now
             <Wallet className="ml-2" size={20} />
-          </Button>
+          </Button> */}
         </div>
       </section>
 
