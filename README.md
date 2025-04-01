@@ -14,8 +14,8 @@ This project enables **crypto-to-stock** investments, allowing users to buy, sel
 4. **AI-Powered Hedera Agents** – Automate account creation, trading, and withdrawals.
 5. **Crypto Wallet Integration** – Login and manage assets with **MetaMask, HashPack, and Rainbow Kit**.
 6. **Hivex AI WhatsApp Bot Integration** – Create accounts, mint tokens, and airdrop stocks via chat.
-
-7. **Fast & Secure Transactions** – Hedera’s **low-cost, high-speed** transactions ensure efficiency.
+7. **Hedera Smart Contract** – 0x7a0e1Be8467b5dCf35291D64CE31ad2f9b502128
+8. **Fast & Secure Transactions** – Hedera’s **low-cost, high-speed** transactions ensure efficiency.
 
 ## Tech Stack
 
