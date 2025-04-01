@@ -69,7 +69,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
           {/* Logo */}
           <div className="p-4 flex items-center justify-between border-b border-sidebar-border">
             {sidebarOpen && (
-              <Link to="/dashboard" className="text-xl font-bold gradient-text">Hirex</Link>
+              <Link to="/dashboard" className="text-xl font-bold gradient-text">Hivex</Link>
             )}
             <button className="text-sidebar-foreground hover:text-web3-purple" onClick={toggleSidebar}>
               {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
@@ -101,9 +101,9 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
                 <div>
                   <p className="text-xs text-gray-400">Hedera Account ID</p>
                   <p className="text-sm text-sidebar-foreground truncate flex items-center gap-2.5">
-                    <span>{data.account} </span> <button type="button" title="Copy Account ID" onClick={() => {
+                    <span>{data?.account} </span> <button type="button" title="Copy Account ID" onClick={() => {
                       navigator.clipboard.readText().then((clipText) => {
-                        clipText = data.account
+                        clipText = data?.account
                         toast.success("Hedera Account ID Copied!")
                       }).catch((err) => {
                         console.error("Failed to copy: ", err)
