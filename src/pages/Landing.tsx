@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,7 +13,6 @@ import {
 } from 'lucide-react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi'
-import { hc } from '@/services/hashconnect';
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -93,7 +91,6 @@ const Landing = () => {
             <ul className="flex items-center gap-2.5">
               <li><ConnectButton label="Login" /></li>
               <li><ConnectButton label="Create Account" /></li>
-              <li><Button onClick={() => hc.openPairingModal()}>Connect Hashpack Wallet</Button></li>
             </ul>
         }
       </nav>
